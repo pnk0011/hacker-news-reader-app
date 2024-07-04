@@ -1,0 +1,87 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #ff6600;
+}
+
+.titleText {
+  width: 800px;
+  color: white;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.textNumber {
+  font-weight: 400;
+  font-size: 48px;
+  color: #ff6600;
+  opacity: 0.3;
+}
+
+.textNumber:hover {
+  color: #ff6600;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.storyWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textAndTimeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.article {
+  font-weight: 700;
+}
+
+.articleAuthor {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.articleWrapper {
+  display: flex;
+  margin-top: 40px;
+  width: 800px;
+}
+
+.articleWrapper:hover {
+  color: #ff6600;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.articleLoading {
+  height: 15px;
+  width: 205px;
+  opacity: 0.4;
+  background-color: #000000;
+}
+
+.articleAuthorLoading {
+  height: 12px;
+  width: 134px;
+  opacity: 0.2;
+  margin-top: 5px;
+  background-color: #000000;
+}
+
+p {
+  margin: 0px;
+}
