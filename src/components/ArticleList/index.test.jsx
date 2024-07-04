@@ -1,7 +1,7 @@
 // ArticleList.test.js
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
-import ArticleList from "../ArticleList";
+import ArticleList from ".";
 import {
   fetchLatestNewsList,
   fetchIndividualArticle,

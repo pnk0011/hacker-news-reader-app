@@ -1,0 +1,42 @@
+.articleWrapper {
+  display: flex;
+  margin-top: 40px;
+  width: 800px;
+}
+
+.textNumber {
+  font-weight: 400;
+  font-size: 48px;
+  color: #ff6600;
+  opacity: 0.3;
+}
+
+.textNumber:hover {
+  color: #ff6600;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.article {
+  font-weight: 700;
+}
+
+.articleAuthor {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.textAndTimeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.articleWrapper:hover .textNumber,
+.articleWrapper:hover {
+  color: #ff6600;
+  opacity: 1 !important;
+  cursor: pointer;
+}

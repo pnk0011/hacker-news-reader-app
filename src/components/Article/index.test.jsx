@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Article from "../Article";
+import Article from ".";
 
 describe("Article Component", () => {
   test("renders the article with provided props", () => {

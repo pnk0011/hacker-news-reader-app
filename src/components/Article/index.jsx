@@ -1,3 +1,5 @@
+import "./style.css";
+
 export default function Article(props) {
   return (
     <div className="articleWrapper">

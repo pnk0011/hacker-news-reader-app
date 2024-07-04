@@ -1,3 +1,5 @@
+import "./style.css";
+
 export default function LoadingPlaceholder({ stories }) {
   return (
     <div className="articleWrapper" data-testid="article-wrapper">

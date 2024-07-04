@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import LoadingPlaceholder from "../LoadingPlaceholder";
+import LoadingPlaceholder from ".";
 
 describe("LoadingPlaceholder component", () => {
   it("renders correctly with stories prop", () => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL } from "../contants/contants";
+import { BASE_URL } from "../config/config";
 import { updateArticleList } from "../utils/utils";
 
 // to fetch list of all top stories

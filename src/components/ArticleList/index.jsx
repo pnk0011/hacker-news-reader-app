@@ -1,9 +1,12 @@
 // components/StoryList.js
 import React, { useEffect, useState, useRef } from "react";
-import Article from "./Article";
-import LoadingPlaceholder from "./LoadingPlaceholder";
-import { fetchLatestNewsList } from "../services/hackerNewsApi";
-import { fetchIndividualArticle } from "../services/hackerNewsApi";
+import Article from "../Article";
+import LoadingPlaceholder from "../LoadingPlaceholder";
+import {
+  fetchLatestNewsList,
+  fetchIndividualArticle,
+} from "../../apis/hackerNewsApi";
+import "./style.css";
 
 const ArticleList = () => {
   const [stories, setStories] = useState([]);
