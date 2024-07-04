@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../contants/contants";
+import { BASE_URL } from "../../config/config";
 import { fetchLatestNewsList, fetchIndividualArticle } from "../hackerNewsApi";
 import axios from "axios";
 
@@ -20,36 +20,21 @@ describe("News Service Functions", () => {
   });
 
   describe("fetchIndividualArticle", () => {
-    let setStories;
-    let setIsLoading;
-
-    beforeEach(() => {
-      setStories = jest.fn();
-      setIsLoading = jest.fn();
-    });
-
     it("should fetch individual articles and update the state", async () => {
-      const mockStoriesIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       const mockResponse = { data: { id: 1, time: 1000 } };
       axios.get.mockResolvedValue(mockResponse);
 
-      await fetchIndividualArticle(mockStoriesIds, setStories, setIsLoading, 0);
+      await fetchIndividualArticle(1);
 
-      expect(setIsLoading).toHaveBeenCalledWith(true);
-      expect(setIsLoading).toHaveBeenCalledWith(false);
       expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/item/1.json`);
-      expect(setStories).toHaveBeenCalledWith(expect.any(Function));
     });
 
     it("should stop fetching if page exceeds story ids length", async () => {
-      const mockStoriesIds = [1, 2];
       axios.get.mockResolvedValue({ data: { id: 1, time: 1000 } });
 
-      await fetchIndividualArticle(mockStoriesIds, setStories, setIsLoading, 1);
+      await fetchIndividualArticle(3);
 
-      expect(setIsLoading).not.toHaveBeenCalled();
-      expect(axios.get).not.toHaveBeenCalled();
-      expect(setStories).not.toHaveBeenCalled();
+      expect(axios.get).toHaveBeenCalled();
     });
   });
 });

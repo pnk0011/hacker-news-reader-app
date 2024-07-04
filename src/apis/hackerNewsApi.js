@@ -13,25 +13,11 @@ export const fetchLatestNewsList = async () => {
 };
 
 // to fetch individual stories vy article id
-export const fetchIndividualArticle = async (
-  storiesIds,
-  setStories,
-  setIsLoading,
-  page
-) => {
-  for (let i = page * 10; i < page * 10 + 10; i++) {
-    if (i >= storiesIds.length) {
-      return;
-    }
-    try {
-      setIsLoading(true);
-      const response = await axios.get(
-        `${BASE_URL}/item/${storiesIds[i]}.json`
-      );
-      setStories((prevStories) => updateArticleList(prevStories, response));
-      setIsLoading(false);
-    } catch (error) {
-      console.log("Something went wrong , while fetching data !!!");
-    }
+export const fetchIndividualArticle = async (storiesId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/item/${storiesId}.json`);
+    return response;
+  } catch (error) {
+    console.log("Something went wrong , while fetching data !!!");
   }
 };

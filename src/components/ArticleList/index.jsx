@@ -1,7 +1,8 @@
 // components/StoryList.js
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Article from "../Article";
 import LoadingPlaceholder from "../LoadingPlaceholder";
+import { updateArticleList } from "../../utils/utils";
 import {
   fetchLatestNewsList,
   fetchIndividualArticle,
@@ -32,14 +33,31 @@ const ArticleList = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const fetchArticleList = useCallback(async () => {
+    for (let i = page * 10; i < page * 10 + 10; i++) {
+      if (i >= storiesIds.length) {
+        return;
+      }
+      try {
+        setIsLoading(true);
+        let article = await fetchIndividualArticle(storiesIds[i]);
+        setStories((prevStories) => updateArticleList(prevStories, article));
+        setIsLoading(false);
+      } catch (error) {
+        console.log("Something went wrong , while fetching data !!!");
+      }
+    }
+  }, [storiesIds, page]);
+
   useEffect(() => {
     if (storiesIds.length && articleFetched.current) {
-      fetchIndividualArticle(storiesIds, setStories, setIsLoading, page);
+      fetchArticleList();
+      //fetchIndividualArticle(storiesIds, setStories, setIsLoading, page);
       articleFetched.current = false;
     } else {
       articleFetched.current = true;
     }
-  }, [storiesIds, page]);
+  }, [storiesIds, page, fetchArticleList]);
 
   useEffect(() => {
     const loadArticleList = async () => {
