@@ -7,7 +7,6 @@ describe("Header component", () => {
     render(<Header />);
 
     const titleElement = screen.getByText("Hacker News");
-    console.log("titleElement", titleElement);
     expect(titleElement).toBeInTheDocument();
 
     const titleTextElement = screen.getByText("Hacker News");

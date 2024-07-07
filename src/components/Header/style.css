@@ -1,15 +1,16 @@
 .header {
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100px;
   background-color: #ff6600;
 }
 
 .titleText {
-  width: 800px;
   color: white;
   font-weight: 700;
   font-size: 64px;
+  height: 62px;
+  width: 750px;
 }

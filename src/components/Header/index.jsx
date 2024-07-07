@@ -3,8 +3,8 @@ import "./style.css";
 
 export default function Header() {
   return (
-    <div className="header">
-      <p className="titleText">Hacker News</p>
-    </div>
+    <header className="header">
+      <h1 className="titleText">Hacker News</h1>
+    </header>
   );
 }

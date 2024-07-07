@@ -2,13 +2,19 @@
   display: flex;
   margin-top: 40px;
   width: 800px;
+  position: relative;
 }
 
 .textNumber {
-  font-weight: 400;
-  font-size: 48px;
   color: #ff6600;
   opacity: 0.3;
+  position: relative;
+  left: -5px;
+}
+
+.textNumber span {
+  font-weight: 400;
+  font-size: 48px;
 }
 
 .textNumber:hover {

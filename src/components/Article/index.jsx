@@ -4,7 +4,7 @@ export default function Article(props) {
   return (
     <div className="articleWrapper">
       <div className="textNumber">
-        <p>{props.index + 1}</p>
+        <span>{props.index + 1}</span>
       </div>
       <div className="textAndTimeWrapper">
         <p className="article">{props.story?.title}</p>

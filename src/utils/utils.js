@@ -18,8 +18,11 @@ export const updateArticleList = (prevStories, response) => {
   let fetchecArticles = [...prevStories, response.data];
   fetchecArticles = fetchecArticles.sort((a, b) => b?.time - a?.time); // sorting articles in descending order from newest to oldest.
   fetchecArticles = fetchecArticles.map((item) => {
-    let articleCreatedTime = timeAgo(item?.time); // timeAgo function will calculate the time when article was created.
-    item.timeAgo = articleCreatedTime;
+    if (item) {
+      let articleCreatedTime = timeAgo(item?.time); // timeAgo function will calculate the time when article was created.
+      item.timeAgo = articleCreatedTime;
+    }
+
     return item;
   });
   return fetchecArticles;

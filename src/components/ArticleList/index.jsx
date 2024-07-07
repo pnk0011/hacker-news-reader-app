@@ -1,4 +1,3 @@
-// components/StoryList.js
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Article from "../Article";
 import LoadingPlaceholder from "../LoadingPlaceholder";
@@ -24,7 +23,6 @@ const ArticleList = () => {
     ) {
       return;
     }
-    console.log("called");
     setPage((prevPage) => prevPage + 1);
   };
 
@@ -75,8 +73,9 @@ const ArticleList = () => {
   return (
     <div className="storyWrapper">
       {stories.map((story, index) => (
-        <Article story={story} index={index} key={story?.id} />
+        <Article story={story} index={index} key={index} />
       ))}
+
       {isLoading ? <LoadingPlaceholder stories={stories} /> : null}
     </div>
   );

@@ -1,6 +1,7 @@
 // ArticleList.test.js
 import React from "react";
-import { render, screen, act } from "@testing-library/react";
+import { render } from "@testing-library/react";
+import { act } from "react";
 import ArticleList from "../ArticleList/index";
 import {
   fetchLatestNewsList,
@@ -23,10 +24,12 @@ describe("ArticleList component", () => {
   // });
 
   it("renders articles after data fetching", async () => {
-    render(<ArticleList />);
+    await act(async () => {
+      render(<ArticleList />);
+    });
 
     expect(fetchLatestNewsList).toHaveBeenCalledTimes(1);
-    expect(fetchIndividualArticle).toHaveBeenCalledTimes(0);
+    expect(fetchIndividualArticle).toHaveBeenCalledTimes(3);
   });
 
   // it("handles scroll event", async () => {
