@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Hacker News Reader App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A newsreader app that displays the latest Hacker News stories in descending order from newest to oldest.
 
 ## Available Scripts
 
